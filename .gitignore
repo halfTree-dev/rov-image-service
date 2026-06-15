@@ -1,0 +1,21 @@
+# 对于 Python 的视觉模块
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+env/
+.env
+
+vision/weights/*.pt
+vision/weights/*.onnx
+vision/weights/*.engine
+
+vision/output/
+
+# 对于 Node.JS 的服务器模块
+web-service/node_modules/
+web-service/dist/
+web-service/.env
+web-service/*.log
+web-service/npm-debug.log*

@@ -1,0 +1,5 @@
+{
+    "output_dir": "./output/videos",
+    "video_fps": 15,
+    "cycle_video_duration": 60
+}

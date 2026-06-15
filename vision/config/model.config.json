@@ -1,0 +1,7 @@
+{
+    "model_weight": "yolov8s.pt",
+    "model_device": 0,
+    "model_imgsz": 640,
+    "model_conf": 0.25,
+    "jpeg_quality": 80
+}

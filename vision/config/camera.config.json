@@ -1,0 +1,4 @@
+{
+    "camera_rtsp_url": "rtsp://admin:123456@192.168.1.168:554/stream1?transport=tcp&tcp_nodelay=1&pixel_format=yuv420p",
+    "camera_max_capture_error": 30
+}
