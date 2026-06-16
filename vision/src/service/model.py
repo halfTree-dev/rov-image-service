@@ -69,7 +69,7 @@ def model_process(logging_queue : multiprocessing.Queue, global_dictionary : dic
 
         add_log(logging_queue, "INFO", "[Model] 开始推理循环")
 
-        # 主循环：检查计数器变化，获取新帧并推理
+        # 检查计数器变化，获取新帧并推理
         while not global_dictionary.get("camera_stop", False):
             current_counter = global_dictionary.get("camera_frame_counter", 0)
             if current_counter == last_counter:
@@ -79,7 +79,7 @@ def model_process(logging_queue : multiprocessing.Queue, global_dictionary : dic
 
             last_counter = current_counter
 
-            # 从 SharedMemory 拷贝最新帧（必须 copy，否则会被下一帧覆盖）
+            # 从 SharedMemory 拷贝最新帧
             frame = shared_memory_buffer.copy()
 
             # 运行 YOLO 模型
@@ -99,7 +99,7 @@ def model_process(logging_queue : multiprocessing.Queue, global_dictionary : dic
                 "annotated": annotated_jpeg
             }
 
-            # 发送到 output 和 zmq 两个队列
+            # 发送到 output 和 zmq 两个队列，用于视频输出和网络传输
             put_jpeg_to_queue(output_queue, frame_data)
             put_jpeg_to_queue(zmq_queue, frame_data)
 

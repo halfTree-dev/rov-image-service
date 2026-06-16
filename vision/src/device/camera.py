@@ -64,7 +64,7 @@ def camera_process(logging_queue : multiprocessing.Queue, global_dictionary : di
 
         global_dictionary["camera_frame_shm_name"] = shared_memory_handler.name
         global_dictionary["camera_frame_shape"] = frame_shape
-        global_dictionary["camera_frame_dtype"] = str(frame_dtype)
+        global_dictionary["camera_frame_dtype"] = np.dtype(frame_dtype).name
         global_dictionary["camera_frame_counter"] = 0
         global_dictionary["camera_ready"] = False
         add_log(logging_queue, "INFO", f"[Camera] 供给摄像头的 SharedMemory 已创建: {shared_memory_handler.name}, 大小: {frame_size} bytes")

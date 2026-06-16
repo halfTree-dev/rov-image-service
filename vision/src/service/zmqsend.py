@@ -32,7 +32,7 @@ def zmq_send_process(logging_queue : multiprocessing.Queue, zmq_queue : multipro
         add_log(logging_queue, "INFO", f"[ZMQ] PUB 套接字已绑定到 {zmq_endpoint}")
 
         while True:
-            # 从队列获取帧数据（阻塞等待）
+            # 从队列获取帧数据
             try:
                 frame_data = zmq_queue.get(timeout=1)
             except Exception:

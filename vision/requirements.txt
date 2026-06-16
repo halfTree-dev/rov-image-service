@@ -1,9 +1,7 @@
-# 摄像头读取与图像处理
-opencv-python>=4.8.0
-numpy>=1.24.0
+# 其它包都包含于系统中，依靠 apt 直接安装，不在此列出
+# 详情见 README.md
 
 # YOLO 目标检测
 ultralytics>=8.0.0
-
 # ZeroMQ 进程间通信
 pyzmq>=25.0.0
