@@ -14,8 +14,10 @@ vision/weights/*.engine
 vision/output/
 
 # 对于 Node.JS 的服务器模块
-web-service/node_modules/
-web-service/dist/
-web-service/.env
-web-service/*.log
-web-service/npm-debug.log*
+node_modules/
+rov-web-service/dist/
+rov-web-service/.env
+rov-web-service/*.log
+rov-web-service/npm-debug.log*
+
+.kilo

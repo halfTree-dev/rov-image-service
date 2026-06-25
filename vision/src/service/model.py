@@ -73,7 +73,6 @@ def model_process(logging_queue : multiprocessing.Queue, global_dictionary : dic
         while not global_dictionary.get("camera_stop", False):
             current_counter = global_dictionary.get("camera_frame_counter", 0)
             if current_counter == last_counter:
-                # 无新帧，短暂让出 CPU
                 time.sleep(0.001)
                 continue
 
@@ -98,7 +97,6 @@ def model_process(logging_queue : multiprocessing.Queue, global_dictionary : dic
                 "original": original_jpeg,
                 "annotated": annotated_jpeg
             }
-
             # 发送到 output 和 zmq 两个队列，用于视频输出和网络传输
             put_jpeg_to_queue(output_queue, frame_data)
             put_jpeg_to_queue(zmq_queue, frame_data)

@@ -50,9 +50,10 @@ def zmq_send_process(logging_queue : multiprocessing.Queue, zmq_queue : multipro
             if original_jpeg is None or annotated_jpeg is None:
                 continue
 
-            # 使用 multipart 消息发布：[topic, timestamp, original, annotated]
+            # 使用 multipart 消息发布：[topic, namelist, timestamp, original, annotated]
             socket.send_multipart([
                 zmq_topic.encode('utf-8'),
+                json.dumps(["original","annotated"]).encode("utf-8"),
                 str(timestamp).encode('utf-8'),
                 original_jpeg,
                 annotated_jpeg

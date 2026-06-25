@@ -48,7 +48,7 @@ pip install -r requirements.txt
 ### 启动项目
 ```sh
 cd /path/to/rov-image-service/vision
-python main.py
+python src/main.py
 ```
 
 

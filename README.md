@@ -13,5 +13,7 @@
 
 ## TODO
 
-[] 完成 vision.py，调用摄像头并跑通目标识别
+[x] 完成 vision.py，调用摄像头并跑通目标识别
+[] 解决视频流保存问题
+[] 解决 Shared Memory 泄露问题
 [] 学习 ZeroMQ

@@ -1,4 +1,5 @@
 {
     "zmq_port": 5555,
-    "zmq_address": "tcp://*:5555"
+    "zmq_address": "tcp://*:5555",
+    "zmq_topic": "rov_image"
 }
